@@ -2,7 +2,7 @@
 
 automata application and algorithms for iOS devices
 
-## Running
+## Run Program
 
 1. Clone Repository
 2. Open Project (In "Automata_Work5" directory) in XCode
