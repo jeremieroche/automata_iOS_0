@@ -20,6 +20,14 @@ class AutomatonTableViewController: UITableViewController {
                 case "form_auto":
                     avc.insertAuto = autoCollection!
                     break
+                case "new_auto":
+                    let model = AutomatonCollectionModel.sharedMegaCollAutoModel()
+                    let blank_auto = Automaton()
+                    model.megaAuto.append(blank_auto)
+                    
+                    avc.insertAuto = blank_auto
+                    break
+                    
                 default : break
                 }
             }
@@ -77,17 +85,31 @@ class AutomatonTableViewController: UITableViewController {
     
     @IBOutlet weak var union_button: UIBarButtonItem!
     @IBAction func union_action(sender: AnyObject) {
-        self.new_auto_merge = true
-        self.union_button.enabled = false
-        self.intersect_button.enabled = false
+        
+        let model = AutomatonCollectionModel.sharedMegaCollAutoModel()
+        
+        if model.megaAuto.count >= 2 {
+            self.new_auto_merge = true
+            self.union_button.enabled = false
+            self.intersect_button.enabled = false
+
+        }
+        
         
     }
     
     @IBOutlet weak var intersect_button: UIBarButtonItem!
     @IBAction func intersect_action(sender: AnyObject) {
-        self.new_auto_inter = true
-        self.union_button.enabled = false
-        self.intersect_button.enabled = false
+        
+        let model = AutomatonCollectionModel.sharedMegaCollAutoModel()
+        
+        if model.megaAuto.count >= 2{
+            self.new_auto_inter = true
+            self.union_button.enabled = false
+            self.intersect_button.enabled = false
+        }
+        
+        
         
     }
     

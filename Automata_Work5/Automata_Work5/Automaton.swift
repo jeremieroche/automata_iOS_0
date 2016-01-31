@@ -766,6 +766,8 @@ class Automaton: NSObject {
             first_parition.append(set)
         }
         
+        first_parition.set_sort()
+        
         // Step 2: Hopcroft Steps (splitting sets)
         
         var prev_parition : Parition = first_parition
@@ -826,15 +828,21 @@ class Automaton: NSObject {
         new_parition.set_sort()
         
         // Step 3: Create Automaton
+//        return self.broke_minimization_autoCreate(new_parition)
+        
+        return self.revised_minimization_autoCreate(new_parition)
+    }
+    
+    private func broke_minimization_autoCreate(parition:Parition) -> Automaton{
         let auto = Automaton(needs_grid: true)
         
         auto.grid_addState()
         
-        for i in 0..<new_parition.set_array.count
+        for i in 0..<parition.set_array.count
         {
             let start_state : State = auto.arrayStates[i]
             
-            let set : Sub_Array = new_parition.set_array[i]
+            let set : Sub_Array = parition.set_array[i]
             
             // Top behave the same as the rest of the set
             let top_id = set.id_array[0]
@@ -844,7 +852,7 @@ class Automaton: NSObject {
             for trans : Transition in top_state.outTrans
             {
                 let end_id : Int = trans.end.id
-                let end_set_id : Int = new_parition.get_set_from_array_id(end_id)
+                let end_set_id : Int = parition.get_set_from_array_id(end_id)
                 
                 let auto_size : Int = auto.size()
                 
@@ -861,7 +869,49 @@ class Automaton: NSObject {
         }
         
         return auto
+    }
     
+    private func revised_minimization_autoCreate(parition:Parition) -> Automaton
+    {
+        
+        let auto = Automaton(needs_grid: true)
+        
+        for i in 0..<parition.set_array.count
+        {
+            
+            let set : Sub_Array = parition.set_array[i]
+            let top_id = set.id_array[0]
+            let top_state : State = self.arrayStates[top_id]
+            
+            let new_state : State = auto.grid_addState()
+            new_state.isFinal = top_state.isFinal
+            
+        }
+        
+        for i in 0..<parition.set_array.count{
+            
+            let start_state : State = auto.arrayStates[i]
+            
+            let set : Sub_Array = parition.set_array[i]
+            
+            let top_id = set.id_array[0]
+            let top_state : State = self.arrayStates[top_id]
+            
+            for trans : Transition in top_state.outTrans
+            {
+                let end_id : Int = trans.end.id
+                let end_set_id : Int = parition.get_set_from_array_id(end_id)
+                
+                let end_state : State = auto.arrayStates[end_set_id]
+                auto.addTransition(from: start_state, to: end_state, withLabel: trans.label)
+            }
+            
+            
+            
+        }
+        
+        return auto
+        
     }
     
     func size() -> Int{
