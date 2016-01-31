@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RDT-pE-SdK">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+    </dependencies>
+    <scenes>
+        <!--Automaton Table View Controller-->
+        <scene sceneID="yWu-x8-Wc5">
+            <objects>
+                <tableViewController id="3aq-hX-MCS" customClass="AutomatonTableViewController" customModule="Automata_Work5" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IgR-IE-p4Z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="form_auto" id="IG2-j8-PQ8">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IG2-j8-PQ8" id="YlJ-gx-jjv">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="form_auto" id="WcY-yV-KqU"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3aq-hX-MCS" id="vWK-Q6-WYu"/>
+                            <outlet property="delegate" destination="3aq-hX-MCS" id="c5w-HY-Pnz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="mtx-3C-yfZ">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Union" id="it2-Rd-wZl">
+                                <connections>
+                                    <action selector="union_action:" destination="3aq-hX-MCS" id="r56-9O-I5T"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Intersect" id="g7d-hT-6LH">
+                                <connections>
+                                    <action selector="intersect_action:" destination="3aq-hX-MCS" id="yCd-an-Ixd"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="+" id="02J-Gb-Cq2">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="new_auto" id="Xkf-XS-mVX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="intersect_button" destination="g7d-hT-6LH" id="xe6-zJ-uUB"/>
+                        <outlet property="union_button" destination="it2-Rd-wZl" id="jE3-DP-HBw"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZyH-ph-sTs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1049" y="718"/>
+        </scene>
+        <!--Automaton View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="AutomatonViewController" customModule="Automata_Work5" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bb2-Br-bcX" customClass="AutomatonView" customModule="Automata_Work5" customModuleProvider="target">
+                                <rect key="frame" x="20" y="72" width="560" height="406"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="80F-iQ-evs" appends="YES" id="YX4-dg-nh0"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQl-Oe-vMh">
+                                <rect key="frame" x="20" y="524" width="68" height="30"/>
+                                <state key="normal" title="Transition"/>
+                                <connections>
+                                    <action selector="addTransition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zyu-pK-ZYB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZa-XU-Fvz">
+                                <rect key="frame" x="20" y="486" width="37" height="30"/>
+                                <state key="normal" title="State"/>
+                                <connections>
+                                    <action selector="add_state:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fld-RE-G4i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhr-ly-0Io">
+                                <rect key="frame" x="20" y="562" width="97" height="30"/>
+                                <state key="normal" title="Control Points"/>
+                                <connections>
+                                    <action selector="toggle_control_point:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RX3-A9-jmF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epa-Ke-JI8">
+                                <rect key="frame" x="85" y="486" width="32" height="30"/>
+                                <state key="normal" title="Final"/>
+                                <connections>
+                                    <action selector="final_action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Ls-vN-RFj"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eag-OA-uVR">
+                                <rect key="frame" x="96" y="525" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="O0d-PU-FcP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdR-0P-Hkt">
+                                <rect key="frame" x="128" y="562" width="65" height="30"/>
+                                <state key="normal" title="Set Label"/>
+                                <connections>
+                                    <action selector="set_label_action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MM3-l8-itZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEE-iS-CGc">
+                                <rect key="frame" x="471" y="486" width="109" height="30"/>
+                                <state key="normal" title="Determinization"/>
+                                <connections>
+                                    <action selector="det_action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ug7-a3-6DB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFl-M1-Io8">
+                                <rect key="frame" x="493" y="550" width="87" height="30"/>
+                                <state key="normal" title="Minimization"/>
+                                <connections>
+                                    <action selector="min_action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="feI-dj-XfT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OI6-Ko-PUK">
+                                <rect key="frame" x="539" y="524" width="41" height="30"/>
+                                <state key="normal" title="Prune"/>
+                                <connections>
+                                    <action selector="prune_action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xiC-Fb-bzj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.98099094389746677" blue="0.87088634424463574" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Eag-OA-uVR" firstAttribute="leading" secondItem="xQl-Oe-vMh" secondAttribute="trailing" constant="8" id="1rP-yN-zPL"/>
+                            <constraint firstItem="bb2-Br-bcX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8pP-Lx-Xv5"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="bb2-Br-bcX" secondAttribute="leading" id="Bpw-3w-1Zx"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="dhr-ly-0Io" secondAttribute="leading" id="DYF-R7-yX5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OI6-Ko-PUK" secondAttribute="trailing" id="EaG-41-YXY"/>
+                            <constraint firstItem="xQl-Oe-vMh" firstAttribute="top" secondItem="Epa-Ke-JI8" secondAttribute="bottom" constant="8" id="NB1-Wy-4iW"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="aZa-XU-Fvz" secondAttribute="leading" id="OBv-jP-U5U"/>
+                            <constraint firstItem="rdR-0P-Hkt" firstAttribute="top" secondItem="Eag-OA-uVR" secondAttribute="bottom" constant="7" id="PIE-pN-Ch4"/>
+                            <constraint firstItem="Epa-Ke-JI8" firstAttribute="leading" secondItem="aZa-XU-Fvz" secondAttribute="trailing" constant="28" id="Pse-MD-51E"/>
+                            <constraint firstItem="Eag-OA-uVR" firstAttribute="top" secondItem="Epa-Ke-JI8" secondAttribute="bottom" constant="9" id="Rdh-XN-aqc"/>
+                            <constraint firstItem="xQl-Oe-vMh" firstAttribute="top" secondItem="aZa-XU-Fvz" secondAttribute="bottom" constant="8" id="S0u-8z-H2y"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="xQl-Oe-vMh" secondAttribute="leading" id="Sju-Dw-ye8"/>
+                            <constraint firstItem="aZa-XU-Fvz" firstAttribute="top" secondItem="bb2-Br-bcX" secondAttribute="bottom" constant="8" id="T1p-5b-YsL"/>
+                            <constraint firstItem="rdR-0P-Hkt" firstAttribute="leading" secondItem="dhr-ly-0Io" secondAttribute="trailing" constant="11" id="VBf-WM-u2y"/>
+                            <constraint firstItem="OI6-Ko-PUK" firstAttribute="top" secondItem="ZEE-iS-CGc" secondAttribute="bottom" constant="8" id="ZJU-eN-KEi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bb2-Br-bcX" secondAttribute="trailing" id="b4T-d9-Pg5"/>
+                            <constraint firstItem="bb2-Br-bcX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="flQ-mc-WYq"/>
+                            <constraint firstItem="ZEE-iS-CGc" firstAttribute="top" secondItem="bb2-Br-bcX" secondAttribute="bottom" constant="8" id="fqK-eq-Ebl"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dhr-ly-0Io" secondAttribute="bottom" constant="8" id="iKf-Gd-EVA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MFl-M1-Io8" secondAttribute="trailing" id="jqz-yL-Vl4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZEE-iS-CGc" secondAttribute="trailing" id="kag-eT-Gwy"/>
+                            <constraint firstItem="MFl-M1-Io8" firstAttribute="top" secondItem="OI6-Ko-PUK" secondAttribute="bottom" constant="-4" id="l93-eb-qp8"/>
+                            <constraint firstItem="dhr-ly-0Io" firstAttribute="top" secondItem="xQl-Oe-vMh" secondAttribute="bottom" constant="8" id="reM-Lx-PBn"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="bb2-Br-bcX" secondAttribute="leading" id="ttL-Ls-ldT"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8pP-Lx-Xv5"/>
+                                <exclude reference="ttL-Ls-ldT"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="wKn-PQ-Njn"/>
+                    <connections>
+                        <outlet property="Prune_button" destination="OI6-Ko-PUK" id="M9C-8K-8De"/>
+                        <outlet property="autoView" destination="bb2-Br-bcX" id="YxX-nF-Myj"/>
+                        <outlet property="det_button" destination="ZEE-iS-CGc" id="hsU-Sj-Uqp"/>
+                        <outlet property="isFinal_button" destination="Epa-Ke-JI8" id="NaQ-9f-IYR"/>
+                        <outlet property="label_textField" destination="Eag-OA-uVR" id="yoA-aC-XL2"/>
+                        <outlet property="min_button" destination="MFl-M1-Io8" id="xGv-Zq-tvw"/>
+                        <outlet property="set_label_button" destination="rdR-0P-Hkt" id="R2t-OM-dr2"/>
+                        <outlet property="state_button" destination="aZa-XU-Fvz" id="Kk5-xC-2gJ"/>
+                        <outlet property="transition_button" destination="xQl-Oe-vMh" id="MK6-Gr-ffZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="80F-iQ-evs">
+                    <connections>
+                        <action selector="tap_action:" destination="BYZ-38-t0r" id="oiN-5X-Zkf"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1799" y="718"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jz1-Dj-9cu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RDT-pE-SdK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bnH-2c-kNv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3aq-hX-MCS" kind="relationship" relationship="rootViewController" id="jrW-Rt-MWH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FKi-ym-rWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="363" y="606"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WcY-yV-KqU"/>
+    </inferredMetricsTieBreakers>
+</document>

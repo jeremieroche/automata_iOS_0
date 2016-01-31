@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C62998641C52EB8200FAF0A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62998631C52EB8200FAF0A1 /* AppDelegate.swift */; };
+		C62998661C52EB8200FAF0A1 /* AutomatonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62998651C52EB8200FAF0A1 /* AutomatonViewController.swift */; };
+		C62998691C52EB8200FAF0A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62998671C52EB8200FAF0A1 /* Main.storyboard */; };
+		C629986C1C52EB8200FAF0A1 /* Automata_Work5.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C629986A1C52EB8200FAF0A1 /* Automata_Work5.xcdatamodeld */; };
+		C629986E1C52EB8200FAF0A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C629986D1C52EB8200FAF0A1 /* Assets.xcassets */; };
+		C62998711C52EB8200FAF0A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C629986F1C52EB8200FAF0A1 /* LaunchScreen.storyboard */; };
+		C629987C1C52EB8200FAF0A1 /* Automata_Work5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C629987B1C52EB8200FAF0A1 /* Automata_Work5Tests.swift */; };
+		C62998871C52EB8200FAF0A1 /* Automata_Work5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62998861C52EB8200FAF0A1 /* Automata_Work5UITests.swift */; };
+		C62998971C52ECF200FAF0A1 /* Automaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62998961C52ECF200FAF0A1 /* Automaton.swift */; };
+		C62998991C52ECFD00FAF0A1 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62998981C52ECFD00FAF0A1 /* State.swift */; };
+		C629989B1C52ED0500FAF0A1 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C629989A1C52ED0500FAF0A1 /* Transition.swift */; };
+		C629989D1C52ED0C00FAF0A1 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C629989C1C52ED0C00FAF0A1 /* Grid.swift */; };
+		C629989F1C52F1AD00FAF0A1 /* GridE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C629989E1C52F1AD00FAF0A1 /* GridE.swift */; };
+		C62998A31C5565C000FAF0A1 /* AutomatonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62998A21C5565C000FAF0A1 /* AutomatonTableViewController.swift */; };
+		C62998A51C5565F900FAF0A1 /* AutomatonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62998A41C5565F900FAF0A1 /* AutomatonTableViewCell.swift */; };
+		C62998A71C55676800FAF0A1 /* AutomatonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62998A61C55676800FAF0A1 /* AutomatonView.swift */; };
+		C62998A91C557E8600FAF0A1 /* AutomatonCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62998A81C557E8600FAF0A1 /* AutomatonCollectionModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C62998781C52EB8200FAF0A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C62998581C52EB8200FAF0A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C629985F1C52EB8200FAF0A1;
+			remoteInfo = Automata_Work5;
+		};
+		C62998831C52EB8200FAF0A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C62998581C52EB8200FAF0A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C629985F1C52EB8200FAF0A1;
+			remoteInfo = Automata_Work5;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C62998601C52EB8200FAF0A1 /* Automata_Work5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Automata_Work5.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C62998631C52EB8200FAF0A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C62998651C52EB8200FAF0A1 /* AutomatonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatonViewController.swift; sourceTree = "<group>"; };
+		C62998681C52EB8200FAF0A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C629986B1C52EB8200FAF0A1 /* Automata_Work5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Automata_Work5.xcdatamodel; sourceTree = "<group>"; };
+		C629986D1C52EB8200FAF0A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C62998701C52EB8200FAF0A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C62998721C52EB8200FAF0A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C62998771C52EB8200FAF0A1 /* Automata_Work5Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Automata_Work5Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C629987B1C52EB8200FAF0A1 /* Automata_Work5Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Automata_Work5Tests.swift; sourceTree = "<group>"; };
+		C629987D1C52EB8200FAF0A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C62998821C52EB8200FAF0A1 /* Automata_Work5UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Automata_Work5UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C62998861C52EB8200FAF0A1 /* Automata_Work5UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Automata_Work5UITests.swift; sourceTree = "<group>"; };
+		C62998881C52EB8200FAF0A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C62998961C52ECF200FAF0A1 /* Automaton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Automaton.swift; sourceTree = "<group>"; };
+		C62998981C52ECFD00FAF0A1 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		C629989A1C52ED0500FAF0A1 /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		C629989C1C52ED0C00FAF0A1 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		C629989E1C52F1AD00FAF0A1 /* GridE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridE.swift; sourceTree = "<group>"; };
+		C62998A21C5565C000FAF0A1 /* AutomatonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomatonTableViewController.swift; sourceTree = "<group>"; };
+		C62998A41C5565F900FAF0A1 /* AutomatonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomatonTableViewCell.swift; sourceTree = "<group>"; };
+		C62998A61C55676800FAF0A1 /* AutomatonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomatonView.swift; sourceTree = "<group>"; };
+		C62998A81C557E8600FAF0A1 /* AutomatonCollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomatonCollectionModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C629985D1C52EB8200FAF0A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C62998741C52EB8200FAF0A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C629987F1C52EB8200FAF0A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C62998571C52EB8200FAF0A1 = {
+			isa = PBXGroup;
+			children = (
+				C62998621C52EB8200FAF0A1 /* Automata_Work5 */,
+				C629987A1C52EB8200FAF0A1 /* Automata_Work5Tests */,
+				C62998851C52EB8200FAF0A1 /* Automata_Work5UITests */,
+				C62998611C52EB8200FAF0A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C62998611C52EB8200FAF0A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C62998601C52EB8200FAF0A1 /* Automata_Work5.app */,
+				C62998771C52EB8200FAF0A1 /* Automata_Work5Tests.xctest */,
+				C62998821C52EB8200FAF0A1 /* Automata_Work5UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C62998621C52EB8200FAF0A1 /* Automata_Work5 */ = {
+			isa = PBXGroup;
+			children = (
+				C62998951C52ECA700FAF0A1 /* Model */,
+				C62998A01C55657900FAF0A1 /* AutoView */,
+				C62998A11C55659B00FAF0A1 /* TableView */,
+				C62998941C52EB8A00FAF0A1 /* Supporting */,
+				C62998671C52EB8200FAF0A1 /* Main.storyboard */,
+			);
+			path = Automata_Work5;
+			sourceTree = "<group>";
+		};
+		C629987A1C52EB8200FAF0A1 /* Automata_Work5Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C629987B1C52EB8200FAF0A1 /* Automata_Work5Tests.swift */,
+				C629987D1C52EB8200FAF0A1 /* Info.plist */,
+			);
+			path = Automata_Work5Tests;
+			sourceTree = "<group>";
+		};
+		C62998851C52EB8200FAF0A1 /* Automata_Work5UITests */ = {
+			isa = PBXGroup;
+			children = (
+				C62998861C52EB8200FAF0A1 /* Automata_Work5UITests.swift */,
+				C62998881C52EB8200FAF0A1 /* Info.plist */,
+			);
+			path = Automata_Work5UITests;
+			sourceTree = "<group>";
+		};
+		C62998941C52EB8A00FAF0A1 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				C62998631C52EB8200FAF0A1 /* AppDelegate.swift */,
+				C629986D1C52EB8200FAF0A1 /* Assets.xcassets */,
+				C629986F1C52EB8200FAF0A1 /* LaunchScreen.storyboard */,
+				C62998721C52EB8200FAF0A1 /* Info.plist */,
+				C629986A1C52EB8200FAF0A1 /* Automata_Work5.xcdatamodeld */,
+			);
+			name = Supporting;
+			sourceTree = "<group>";
+		};
+		C62998951C52ECA700FAF0A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C62998961C52ECF200FAF0A1 /* Automaton.swift */,
+				C62998981C52ECFD00FAF0A1 /* State.swift */,
+				C629989A1C52ED0500FAF0A1 /* Transition.swift */,
+				C629989C1C52ED0C00FAF0A1 /* Grid.swift */,
+				C629989E1C52F1AD00FAF0A1 /* GridE.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C62998A01C55657900FAF0A1 /* AutoView */ = {
+			isa = PBXGroup;
+			children = (
+				C62998651C52EB8200FAF0A1 /* AutomatonViewController.swift */,
+				C62998A61C55676800FAF0A1 /* AutomatonView.swift */,
+			);
+			name = AutoView;
+			sourceTree = "<group>";
+		};
+		C62998A11C55659B00FAF0A1 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				C62998A21C5565C000FAF0A1 /* AutomatonTableViewController.swift */,
+				C62998A81C557E8600FAF0A1 /* AutomatonCollectionModel.swift */,
+				C62998A41C5565F900FAF0A1 /* AutomatonTableViewCell.swift */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C629985F1C52EB8200FAF0A1 /* Automata_Work5 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C629988B1C52EB8200FAF0A1 /* Build configuration list for PBXNativeTarget "Automata_Work5" */;
+			buildPhases = (
+				C629985C1C52EB8200FAF0A1 /* Sources */,
+				C629985D1C52EB8200FAF0A1 /* Frameworks */,
+				C629985E1C52EB8200FAF0A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Automata_Work5;
+			productName = Automata_Work5;
+			productReference = C62998601C52EB8200FAF0A1 /* Automata_Work5.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C62998761C52EB8200FAF0A1 /* Automata_Work5Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C629988E1C52EB8200FAF0A1 /* Build configuration list for PBXNativeTarget "Automata_Work5Tests" */;
+			buildPhases = (
+				C62998731C52EB8200FAF0A1 /* Sources */,
+				C62998741C52EB8200FAF0A1 /* Frameworks */,
+				C62998751C52EB8200FAF0A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C62998791C52EB8200FAF0A1 /* PBXTargetDependency */,
+			);
+			name = Automata_Work5Tests;
+			productName = Automata_Work5Tests;
+			productReference = C62998771C52EB8200FAF0A1 /* Automata_Work5Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C62998811C52EB8200FAF0A1 /* Automata_Work5UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C62998911C52EB8200FAF0A1 /* Build configuration list for PBXNativeTarget "Automata_Work5UITests" */;
+			buildPhases = (
+				C629987E1C52EB8200FAF0A1 /* Sources */,
+				C629987F1C52EB8200FAF0A1 /* Frameworks */,
+				C62998801C52EB8200FAF0A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C62998841C52EB8200FAF0A1 /* PBXTargetDependency */,
+			);
+			name = Automata_Work5UITests;
+			productName = Automata_Work5UITests;
+			productReference = C62998821C52EB8200FAF0A1 /* Automata_Work5UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C62998581C52EB8200FAF0A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = jeremieroche;
+				TargetAttributes = {
+					C629985F1C52EB8200FAF0A1 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = NJGZ828S5A;
+					};
+					C62998761C52EB8200FAF0A1 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = NJGZ828S5A;
+						TestTargetID = C629985F1C52EB8200FAF0A1;
+					};
+					C62998811C52EB8200FAF0A1 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = NJGZ828S5A;
+						TestTargetID = C629985F1C52EB8200FAF0A1;
+					};
+				};
+			};
+			buildConfigurationList = C629985B1C52EB8200FAF0A1 /* Build configuration list for PBXProject "Automata_Work5" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C62998571C52EB8200FAF0A1;
+			productRefGroup = C62998611C52EB8200FAF0A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C629985F1C52EB8200FAF0A1 /* Automata_Work5 */,
+				C62998761C52EB8200FAF0A1 /* Automata_Work5Tests */,
+				C62998811C52EB8200FAF0A1 /* Automata_Work5UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C629985E1C52EB8200FAF0A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C62998711C52EB8200FAF0A1 /* LaunchScreen.storyboard in Resources */,
+				C629986E1C52EB8200FAF0A1 /* Assets.xcassets in Resources */,
+				C62998691C52EB8200FAF0A1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C62998751C52EB8200FAF0A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C62998801C52EB8200FAF0A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C629985C1C52EB8200FAF0A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C62998A31C5565C000FAF0A1 /* AutomatonTableViewController.swift in Sources */,
+				C629989B1C52ED0500FAF0A1 /* Transition.swift in Sources */,
+				C62998A51C5565F900FAF0A1 /* AutomatonTableViewCell.swift in Sources */,
+				C629989F1C52F1AD00FAF0A1 /* GridE.swift in Sources */,
+				C62998661C52EB8200FAF0A1 /* AutomatonViewController.swift in Sources */,
+				C629986C1C52EB8200FAF0A1 /* Automata_Work5.xcdatamodeld in Sources */,
+				C62998971C52ECF200FAF0A1 /* Automaton.swift in Sources */,
+				C62998991C52ECFD00FAF0A1 /* State.swift in Sources */,
+				C629989D1C52ED0C00FAF0A1 /* Grid.swift in Sources */,
+				C62998A71C55676800FAF0A1 /* AutomatonView.swift in Sources */,
+				C62998A91C557E8600FAF0A1 /* AutomatonCollectionModel.swift in Sources */,
+				C62998641C52EB8200FAF0A1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C62998731C52EB8200FAF0A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C629987C1C52EB8200FAF0A1 /* Automata_Work5Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C629987E1C52EB8200FAF0A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C62998871C52EB8200FAF0A1 /* Automata_Work5UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C62998791C52EB8200FAF0A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C629985F1C52EB8200FAF0A1 /* Automata_Work5 */;
+			targetProxy = C62998781C52EB8200FAF0A1 /* PBXContainerItemProxy */;
+		};
+		C62998841C52EB8200FAF0A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C629985F1C52EB8200FAF0A1 /* Automata_Work5 */;
+			targetProxy = C62998831C52EB8200FAF0A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C62998671C52EB8200FAF0A1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C62998681C52EB8200FAF0A1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C629986F1C52EB8200FAF0A1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C62998701C52EB8200FAF0A1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C62998891C52EB8200FAF0A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C629988A1C52EB8200FAF0A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C629988C1C52EB8200FAF0A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Automata_Work5/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JeremieRoche.Automata-Work5";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C629988D1C52EB8200FAF0A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Automata_Work5/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JeremieRoche.Automata-Work5";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C629988F1C52EB8200FAF0A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Automata_Work5Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JeremieRoche.Automata-Work5Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Automata_Work5.app/Automata_Work5";
+			};
+			name = Debug;
+		};
+		C62998901C52EB8200FAF0A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Automata_Work5Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JeremieRoche.Automata-Work5Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Automata_Work5.app/Automata_Work5";
+			};
+			name = Release;
+		};
+		C62998921C52EB8200FAF0A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Automata_Work5UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JeremieRoche.Automata-Work5UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Automata_Work5;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		C62998931C52EB8200FAF0A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Automata_Work5UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JeremieRoche.Automata-Work5UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Automata_Work5;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C629985B1C52EB8200FAF0A1 /* Build configuration list for PBXProject "Automata_Work5" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C62998891C52EB8200FAF0A1 /* Debug */,
+				C629988A1C52EB8200FAF0A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C629988B1C52EB8200FAF0A1 /* Build configuration list for PBXNativeTarget "Automata_Work5" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C629988C1C52EB8200FAF0A1 /* Debug */,
+				C629988D1C52EB8200FAF0A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C629988E1C52EB8200FAF0A1 /* Build configuration list for PBXNativeTarget "Automata_Work5Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C629988F1C52EB8200FAF0A1 /* Debug */,
+				C62998901C52EB8200FAF0A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C62998911C52EB8200FAF0A1 /* Build configuration list for PBXNativeTarget "Automata_Work5UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C62998921C52EB8200FAF0A1 /* Debug */,
+				C62998931C52EB8200FAF0A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C629986A1C52EB8200FAF0A1 /* Automata_Work5.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C629986B1C52EB8200FAF0A1 /* Automata_Work5.xcdatamodel */,
+			);
+			currentVersion = C629986B1C52EB8200FAF0A1 /* Automata_Work5.xcdatamodel */;
+			path = Automata_Work5.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C62998581C52EB8200FAF0A1 /* Project object */;
+}
