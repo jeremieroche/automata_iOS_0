@@ -121,7 +121,7 @@ class AutomatonView: UIView {
     
     
     override func drawRect(rect: CGRect) {
-        self.automaton.draw()
+        self.automaton.revised_draw()
     }
     
     func move_action(point tapPoint: CGPoint)

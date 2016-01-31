@@ -91,9 +91,9 @@ class Transition: NSObject {
     
     // MARK: Drawing Arrow
     
-    func drawFrom(inState: State){
+    func drawFrom(inState: State, withIndex index:Int){
         
-        self.draw_path(inState)
+        self.revised_draw_path(inState, withIndex: index)
         self.draw_label(inState)
         if self.show_control_points{
             self.draw_control_points(inState)
@@ -112,6 +112,35 @@ class Transition: NSObject {
         if self.controlPoint1 == nil  || self.controlPoint2 == nil{
             var (controlPoint1, controlPoint2) : (CGPoint,CGPoint)
             if self.is_first(from: inState, to: outState){
+                (controlPoint1,controlPoint2) = self.midpoint_compute_control_point(inState)
+            } else {
+                (controlPoint1,controlPoint2) = self.compute_control_points(inState, end: outState)
+            }
+            
+            self.controlPoint1 = controlPoint1
+            self.controlPoint2 = controlPoint2
+            
+        }
+        
+        let inIntersection : CGPoint = self.revised_compute_intersection(inState, external_point: self.controlPoint1!)
+        let outIntersection : CGPoint = self.revised_compute_intersection(outState, external_point: self.controlPoint2!)
+        
+        self.inIntersection = inIntersection
+        self.outIntersection = outIntersection
+        
+        self.drawLine(path, inIntersection: inIntersection, outIntersection: outIntersection)
+        
+        self.revised_draw_arrow(outState, intersection: outIntersection, external_relative: self.controlPoint2!)
+    }
+    
+    private func revised_draw_path(inState: State,withIndex index:Int){
+        let path : UIBezierPath = UIBezierPath()
+        let outState : State = self.end
+        
+        
+        if self.controlPoint1 == nil  || self.controlPoint2 == nil{
+            var (controlPoint1, controlPoint2) : (CGPoint,CGPoint)
+            if index == 0{
                 (controlPoint1,controlPoint2) = self.midpoint_compute_control_point(inState)
             } else {
                 (controlPoint1,controlPoint2) = self.compute_control_points(inState, end: outState)

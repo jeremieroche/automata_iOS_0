@@ -210,18 +210,50 @@ class Automaton: NSObject {
     }
     
     // MARK: Drawing Methods
-    func draw(){
+//    func draw(){
+//        for state in self.arrayStates{
+//            
+//            state.draw()
+//            
+//            let transArray = state.outTrans
+//            for trans in transArray{
+//                trans.show_control_points = self.show_control_points
+//                trans.drawFrom(state)
+//            }
+//            
+//        }
+//    }
+    
+    func revised_draw(){
         for state in self.arrayStates{
-            
             state.draw()
             
-            let transArray = state.outTrans
-            for trans in transArray{
-                trans.show_control_points = self.show_control_points
-                trans.drawFrom(state)
+            for (endState,index) : (State,Int) in state.end_state_count{
+                
+                let transArray : [Transition] = self.find_corresponding_transitions(from: state, to: endState)
+                
+                if index != transArray.count-1{
+                    fatalError()
+                }
+                
+                for i in 0...index{
+                    let trans : Transition = transArray[i]
+                    trans.drawFrom(state, withIndex: i)
+                }
             }
-            
         }
+    }
+    
+    private func find_corresponding_transitions(from startState:State, to endState:State) -> [Transition]{
+        var transArray : [Transition] = []
+        
+        for trans:Transition in startState.outTrans{
+            if trans.end == endState{
+                transArray.append(trans)
+            }
+        }
+        
+        return transArray
     }
     
     // MARK: Automaton Function
@@ -441,6 +473,10 @@ class Automaton: NSObject {
     
     func prune() -> Automaton{
         
+        if self.isEmpty(){
+            return self
+        }
+        
         var state_queue = [State]()
         let initial_state : State = self.arrayStates[0]
         state_queue.append(initial_state)
@@ -582,6 +618,11 @@ class Automaton: NSObject {
     
     func determinization() -> Automaton
     {
+        
+        if self.isEmpty(){
+            return self
+        }
+        
         let auto = Automaton(needs_grid: true)
         
         // TODO: Convert to SubArray?
@@ -691,6 +732,10 @@ class Automaton: NSObject {
     
     func minimization() -> Automaton
     {
+        if self.isEmpty(){
+            return self
+        }
+        
         // Step 1: Create Initial Parition
         
         // a: Find the "Final_Label" for each state

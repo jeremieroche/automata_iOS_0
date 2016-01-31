@@ -37,6 +37,17 @@ class AutomatonViewController: UIViewController, UIPickerViewDelegate, UITableVi
     var show_control_points : Bool = false
     var set_label_bool : Bool = false
     
+    private func automaton_bool_reset(){
+        self.enable_add_state = false
+        self.enable_add_transition = false
+        self.set_final = false
+        self.show_control_points  = false
+        self.set_label_bool = false
+        
+        self.autoView.inState = nil
+
+    }
+    
     private func group_automatonButton_enabled(enabled enableAutoField: Bool){
         
         if enableAutoField {
@@ -189,7 +200,7 @@ class AutomatonViewController: UIViewController, UIPickerViewDelegate, UITableVi
     @IBOutlet weak var set_label_button: UIButton!
     @IBAction func set_label_action(sender: AnyObject) {
         
-        if self.label_textField.text != nil {
+        if self.label_textField.text?.characters.first != nil {
             self.set_label_bool = true
             self.group_automatonButton_enabled(enabled: false)
         }
@@ -200,14 +211,13 @@ class AutomatonViewController: UIViewController, UIPickerViewDelegate, UITableVi
     
     @IBOutlet weak var label_textField: UITextField!
     
-    private func modifiy_label(with char: Character)
-    {
-        
-    }
-    
     private func get_label() -> Character?
     {
         if let field_string : String = self.label_textField.text{
+            
+            if field_string.characters.first == nil{
+                return nil
+            }
             
             let first_char : Character = field_string.characters.first!
             
@@ -229,16 +239,27 @@ class AutomatonViewController: UIViewController, UIPickerViewDelegate, UITableVi
     @IBOutlet weak var det_button: UIButton!
     @IBAction func det_action(sender: AnyObject) {
         self.autoView.determinization()
+        
+        self.automaton_bool_reset()
+        self.group_automatonButton_enabled(enabled: true)
     }
     
     @IBOutlet weak var Prune_button: UIButton!
     @IBAction func prune_action(sender: AnyObject) {
         self.autoView.prune()
+        
+        self.automaton_bool_reset()
+        self.group_automatonButton_enabled(enabled: true)
+
     }
     
     @IBOutlet weak var min_button: UIButton!
     @IBAction func min_action(sender: AnyObject) {
         self.autoView.minimization()
+        
+        self.automaton_bool_reset()
+        self.group_automatonButton_enabled(enabled: true)
+
 
     }
     

@@ -22,7 +22,7 @@ class AutomatonCollectionModel: NSObject {
     }
     
     static private func testAutos() -> [Automaton]{
-        return test_min()
+        return revised_test1()
     }
     
     static private func test0() ->  [Automaton]{
@@ -88,6 +88,26 @@ class AutomatonCollectionModel: NSObject {
         return arrayVisAuto
         
         
+    }
+    
+    static private func revised_test1() -> [Automaton]{
+        let auto1 : Automaton = Automaton(needs_grid: true)
+        
+        let state1 : State = auto1.grid_addState()
+        let state2 : State = auto1.grid_addStateFrom(origin: state1, label: "a")
+        auto1.addTransition(from: state1, to: state2, withLabel: "b")
+        auto1.grid_addStateFrom(origin: state2, label: "c")
+        
+        let auto2 : Automaton = Automaton(needs_grid: true)
+        
+        let state_1 : State = auto2.grid_addState()
+        let state_2 : State = auto2.grid_addStateFrom(origin: state_1, label: "a")
+        auto2.addTransition(from: state_1, to: state_2, withLabel: "d")
+        auto2.grid_addStateFrom(origin: state_2, label: "c")
+        
+        let arrayAuto : [Automaton] = [auto1,auto2]
+        
+        return arrayAuto
     }
     
     static private func test_prune() -> [Automaton]{
